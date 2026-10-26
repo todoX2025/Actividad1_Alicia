@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alicia en el país de las maravillas | JavaScript</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <p class="sobrelinea">PROGRAMACIÓN WEB I</p>
+    <h1>♠ Alicia en el país de las maravillas ♥</h1>
+    <p>Un pequeño laboratorio para practicar HTML, CSS y JavaScript.</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="intro">
+      <h2>Bienvenido al País de las Maravillas</h2>
+      <p>Completa cada formulario y observa cómo JavaScript procesa tus datos sin recargar la página.</p>
+      <p class="nota">Reglas: puerta de 120 cm; poción entre 0 y 100 ml; descuento del 10 % si compras 4 o más tazas; máximo 50 cartas.</p>
+    </section>
+
+    <section class="tarjeta" id="pocion">
+      <h2>1. La poción mágica de Alicia</h2>
+      <p>Alicia cambia de tamaño. La regla usada es: <strong>altura final = altura inicial − (cantidad de poción × 2)</strong>. Si el resultado es menor que 0, se considera 0 cm.</p>
+      <form id="formPocion">
+        <div class="campo">
+          <label for="altura">Altura inicial de Alicia (cm)</label>
+          <input id="altura" name="altura" type="number" min="1" step="any" required placeholder="Ej. 150">
+        </div>
+        <div class="campo">
+          <label for="cantidadPocion">Cantidad de poción (ml, de 0 a 100)</label>
+          <input id="cantidadPocion" name="cantidadPocion" type="number" min="0" max="100" step="any" required placeholder="Ej. 20">
+        </div>
+        <button type="submit">Calcular tamaño</button>
+      </form>
+      <div id="resultadoPocion" class="resultado" aria-live="polite">Aquí aparecerá el resultado.</div>
+    </section>
+
+    <section class="tarjeta" id="merienda">
+      <h2>2. La merienda del Sombrerero Loco</h2>
+      <p>Precios por taza: té £5, café £7, chocolate £8 y limonada £4. Si compras 4 tazas o más, recibes un descuento del 10 % sobre el subtotal.</p>
+      <form id="formMerienda">
+        <div class="campo">
+          <label for="nombreInvitado">Nombre del invitado</label>
+          <input id="nombreInvitado" name="nombreInvitado" type="text" maxlength="60" required placeholder="Ej. Alicia">
+        </div>
+        <div class="campo">
+          <label for="bebida">Bebida</label>
+          <select id="bebida" name="bebida" required>
+            <option value="">Selecciona una bebida</option>
+            <option value="te">Té — £5 por taza</option>
+            <option value="cafe">Café — £7 por taza</option>
+            <option value="chocolate">Chocolate — £8 por taza</option>
+            <option value="limonada">Limonada — £4 por taza</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="tazas">Cantidad de tazas (1 a 20)</label>
+          <input id="tazas" name="tazas" type="number" min="1" max="20" step="1" required placeholder="Ej. 4">
+        </div>
+        <button type="submit">Calcular compra</button>
+      </form>
+      <div id="resultadoMerienda" class="resultado" aria-live="polite">Aquí aparecerá el detalle de la compra.</div>
+    </section>
+
+    <section class="tarjeta" id="reina">
+      <h2>3. El desafío de la Reina de Corazones</h2>
+      <p>La Reina analizará las cartas desde el número 1 hasta el número que indiques. Se contarán y sumarán por separado los pares y los impares.</p>
+      <form id="formReina">
+        <div class="campo">
+          <label for="numeroCartas">Cantidad de cartas (1 a 50)</label>
+          <input id="numeroCartas" name="numeroCartas" type="number" min="1" max="50" step="1" required placeholder="Ej. 10">
+        </div>
+        <button type="submit">Analizar cartas</button>
+      </form>
+      <div id="resultadoReina" class="resultado" aria-live="polite">Aquí aparecerá el análisis.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Actividad práctica • HTML5, CSS3 y JavaScript nativo</p>
+  </footer>
+</body>
+</html>

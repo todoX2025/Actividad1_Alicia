@@ -1,0 +1,79 @@
+/* Estilos básicos; no se utiliza Flexbox ni CSS Grid. */
+:root {
+  --morado: #4b286d;
+  --violeta: #7047a3;
+  --rosa: #f4d7f5;
+  --crema: #fffaf0;
+  --texto: #292235;
+  --borde: #d8c8e5;
+  --verde: #176b45;
+  --rojo: #9b2635;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--texto);
+  background: #f5effa;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+.cabecera {
+  padding: 30px 18px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #38204e, #7047a3);
+}
+.cabecera h1 { margin: 5px auto; max-width: 900px; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.cabecera p { margin: 6px 0; }
+.sobrelinea { letter-spacing: 3px; font-size: .8rem; }
+.contenedor { width: 92%; max-width: 900px; margin: 24px auto; }
+.intro, .tarjeta {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(55, 28, 77, .07);
+}
+h2 { color: var(--morado); margin-top: 0; }
+.nota { padding: 10px 12px; background: var(--rosa); border-radius: 7px; }
+.campo { margin: 14px 0; }
+label { display: block; margin-bottom: 5px; font-weight: bold; }
+input, select {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #b8a5ca;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #fff;
+}
+input:focus, select:focus { outline: 3px solid #e7d8f7; border-color: var(--violeta); }
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 17px;
+  background: var(--morado);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover { background: var(--violeta); }
+.resultado {
+  margin-top: 16px;
+  padding: 13px;
+  background: var(--crema);
+  border-left: 4px solid var(--violeta);
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+.resultado.error { border-left-color: var(--rojo); color: var(--rojo); }
+.resultado.exito { border-left-color: var(--verde); }
+.resultado ul { margin-bottom: 0; }
+footer { text-align: center; padding: 12px; color: #665773; }
+@media (max-width: 600px) {
+  .contenedor { width: 94%; margin: 14px auto; }
+  .intro, .tarjeta { padding: 15px; }
+  .cabecera { padding: 23px 12px; }
+  button { width: 100%; }
+}
